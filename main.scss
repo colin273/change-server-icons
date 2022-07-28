@@ -1,0 +1,28 @@
+// Change Server Icons
+$servers: (
+  // Powercord
+  "538759280057122817": "https://cdn.discordapp.com/avatars/518171798513254407/665fe74ee3fbf58b9d5949d7e15dbafa.webp?size=256",
+  // Sileo
+  "468422899716456498": "https://cdn.discordapp.com/attachments/785672346320240680/908013501233119322/image0.jpg",
+  // GooseNest
+  "756146058320674998": "https://cdn.discordapp.com/avatars/760559484342501406/5125aff2f446ad7c45cf2dfd6abf92ed.webp",
+  // r/Jailbreak
+  "349243932447604736": "https://cdn.discordapp.com/attachments/942737788321800252/959485559498215445/oMf6e9t.png"
+);
+
+@each $guild, $icon in $servers {
+  $url-match: "cdn\.discordapp\.com\/icons\/#{$guild}\/";
+
+  // Icons in server list
+  [data-list-item-id*="#{$guild}"] > .icon-3AqZ2e {
+    content: url($icon) !important;
+  }
+  .icon-1zKOXL[style*="#{$url-match}"] {
+    background-image: url($icon) !important;
+  }
+  .avatar-1-pIh6, .avatar-b5OQ1N, .guildIcon-2SUGiq, .voiceSectionGuildImage-TctMOd {
+    &[src*="#{$url-match}"] {
+      content: url($icon) !important;
+    }
+  }
+}

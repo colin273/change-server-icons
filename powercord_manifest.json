@@ -1,0 +1,8 @@
+{
+  "name": "Change Server Icons",
+  "description": "Change server icons",
+  "version": "1.0.0",
+  "author": "FifiTheBulldog#6153",
+  "license": "MIT",
+  "theme": "main.scss"
+}
